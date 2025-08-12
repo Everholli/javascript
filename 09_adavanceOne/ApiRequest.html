@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API resquests</title>
+</head>
+<body style="background: #212121; color: aliceblue;">
+    {
+  "login": "Everholli",
+  "id": 203599092,
+  "node_id": "U_kgDODCKs9A",
+  "avatar_url": "https://avatars.githubusercontent.com/u/203599092?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/Everholli",
+  "html_url": "https://github.com/Everholli",
+  "followers_url": "https://api.github.com/users/Everholli/followers",
+  "following_url": "https://api.github.com/users/Everholli/following{/other_user}",
+  "gists_url": "https://api.github.com/users/Everholli/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/Everholli/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/Everholli/subscriptions",
+  "organizations_url": "https://api.github.com/users/Everholli/orgs",
+  "repos_url": "https://api.github.com/users/Everholli/repos",
+  "events_url": "https://api.github.com/users/Everholli/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/Everholli/received_events",
+  "type": "User",
+  "user_view_type": "public",
+  "site_admin": false,
+  "name": "Shruti Mishra",
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "public_repos": 4,
+  "public_gists": 0,
+  "followers": 3,
+  "following": 5,
+  "created_at": "2025-03-17T05:17:11Z",
+  "updated_at": "2025-08-04T16:17:58Z"
+}
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users/everholli';
+    const xhr = new XPathResult();
+    xhr.open('GET', requestURL);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+            // const data = this.responseText (this will not work boz the response text looks like object but it is in string format so we have to converet it into Json by using JSON.parse)
+            const data = JSON.parse(this.responseText)
+            console.log(data);
+            console.log(data.followers);
+            
+        }
+    }
+</script>
+</html>
